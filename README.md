@@ -4,20 +4,22 @@ formattedTextarea
 Intro
 -----
 
-jQuery plugin to generate a working editing interface for a textarea.
+jQuery plugin to create an editing interface for textfields using plaintext formatting.
 
 Usage
 -----
 
+See files in the `docs/` folder, or...
+
     $('#my-textarea').formattedTextarea({
       controls: {
-        bold: '[b]%s[/b]',  // '%s' is the substitution string, and thus will be replaced
+        bold: '[b]%s[/b]',
         italic: '[i]%s[/i]',
         // ...
       }
     });
 
-...will add <input> buttons before the textarea corresponding to the bold and italic controls in the options hash. Clicking on a button will either surround the currently selected text with the respective format string, or add the format string with filler text to the current caret position.
+...will add buttons for bold and italic typefaces above the textarea. Clicking on a button with a text selection will surround it with the selected formatting. Without a text selection, the formatting will be added at the current cursor position, with the substitution string (default "%s") replaced with a filler text.
 
 License
 -------

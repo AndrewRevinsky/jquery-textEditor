@@ -11,45 +11,46 @@
       // Get default options, and merge with provided
       var defaults =
       {
-        controls: {
-          bold: '*%s*',
-          italic: '_%s_',
-        }
+        controls: {},                     // formatting controls to show
+        substitution_string: '%s',        // replaced w/prompt_text or selection
+        prompt_string: 'type text here',  // replaces sub string when no text is selected
+        ul_class: 'format-ul',            // list class
+        li_class: 'format-li'             // list element class
       };
       var options = $.extend(defaults, options);
+
       // For each matched <textarea>
       return this.each(function ()
       {
-        // Grab object
+        // Grab object and generate list
         var obj = $(this);
+        var list = $(document.createElement('ul'))
+                    .addClass(options.ul_class)
+                    .insertBefore(obj);
+
         // Add all formatting buttons from options
         for (option in options.controls)
         {
           // Generate formatting button
           var format = options.controls[option];
-          var button = $(document.createElement('input'))
-          $(button).attr(
-          {
-            type: 'button',
-            value: option
-          }).click(function ()
-          {
-            // Insert or replace text into textarea
-            var selection = $(obj).getSelection().text;
-            var replacement = options.controls[$(this).attr('value')];
-            // Check insert or replace
-            if (selection == '')
-            {
-              $(obj).insertAtCaret(replacement.replace('%s', 'type text here'));
-            }
-            else
-            {
-              $(obj).replaceSelection(replacement.replace('%s', selection), true);
-            }
-            return false;
-          });
-          // Add formatting button
-          $(obj).before(button);
+          $(document.createElement('li'))
+            .html(option)
+            .addClass(options.li_class)
+            .click(function() {
+              // Get selection and replacement
+              var selection = $(obj).getSelection().text;
+              var replacement = options.controls[$(this).html()];
+
+              // Either insert or replace text
+              if (selection == '') {
+                $(obj).insertAtCaret(replacement.replace(options.substitution_string, options.prompt_string));
+              } else {
+                $(obj).replaceSelection(replacement.replace(options.substitution_string, selection), true);
+              }
+
+              return false;
+            })
+            .appendTo(list);
         }
       });
     }
