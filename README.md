@@ -4,20 +4,20 @@ formattedTextarea
 Intro
 -----
 
-jQuery plugin to generate an editing interface for a formatted textarea.
+jQuery plugin to generate a working editing interface for a textarea.
 
 Usage
 -----
 
-    Create a BBCode editor:
-
-    $('#').formattedTextarea({
+    $('#my-textarea').formattedTextarea({
       controls: {
-        bold: '[b]%s[/b]',
+        bold: '[b]%s[/b]',  // '%s' is the substitution string, and thus will be replaced
         italic: '[i]%s[/i]',
         // ...
       }
     });
+
+...will add <input> buttons before the textarea corresponding to the bold and italic controls in the options hash. Clicking on a button will either surround the currently selected text with the respective format string, or add the format string with filler text to the current caret position.
 
 License
 -------
