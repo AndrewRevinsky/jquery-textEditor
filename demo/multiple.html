@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Test page!</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.formattedTextarea.js"></script>
+  </head>
+
+  <body>
+    <h2>Markdown is fun...</h2>
+    <form>
+      <textarea rows="10" cols="40" id="mdedit"></textarea>
+      <input type="submit" value="Save!" />
+    </form>
+
+    <h2>BBCode sucks... Let's edit it anyway!</h2>
+    <form>
+      <textarea rows="10" cols="40" id="bbedit"></textarea>
+      <input type="submit" value="Save!" />
+    </form>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('#bbedit').formattedTextarea({
+        controls: {
+          'Bold': '[b]%s[/b]',
+          'Italic': '[i]%s[/i]',
+        },
+        prompt_string: 'bbcode sucks, but you can type it here anyway'
+      });
+
+      $('#mdedit').formattedTextarea({
+        controls: {
+          'Bold': '*%s*',
+          'Italic': '_%s_',
+          'Strike': '-%s-'
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
