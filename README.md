@@ -9,7 +9,7 @@ jQuery plugin to create an editing interface for textfields using plaintext form
 Usage
 -----
 
-See files in the `docs/` folder, or...
+See files in the `demos/` folder, or...
 
     $('#my-textarea').formattedTextarea({
       controls: {
