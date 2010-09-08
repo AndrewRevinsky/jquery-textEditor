@@ -6,27 +6,42 @@
     <script type="text/javascript" src="../jquery.texteditor.js"></script>
     <style>
     .format-ul {
-      padding: 0px;
-      margin: 10px;
+      padding: 10px 3px;
+      margin: 0px;
       text-align: left;
+      background-color: #aaa;
+      border-top: 1px solid #999;
+      width: 494px;
     }
     .format-li { 
-      margin-right: 5px;
-      padding: 3px;
+      margin: 3px;
+      padding: 5px;
       display: inline;
       color: #fff;
-      background-color: #333;
-      font-weight: bold;
+      background-color: #555;
       font-family: sans-serif;
+      border: 1px solid #bbb;
+      list-style-type: circle;
+    }
+    .format-li:hover {
+      text-shadow: #333 0px 1px 0px;
+      background-color: #666;
+      cursor: pointer;
+    }
+    textarea {
+      margin: 0px;
+      width: 500px;
+      border: 1px solid #ccc;
+      border-top: none;
     }
     </style>
   </head>
 
   <body>
-    <h1>Test page!</h1>
+    <h1>Slightly less ugly!</h1>
 
     <form>
-      <textarea rows="10" cols="40" id="ta"></textarea>
+      <textarea rows="10" cols="40" id="ta"></textarea><br />
       <input type="submit" value="Save!" />
     </form>
 
@@ -36,7 +51,9 @@
         controls: {
           'Bold': '**%s**',
           'Italic': '_%s_',
-          'Code': '`%s`'
+          'Code (inline)': '`%s`',
+          'Code (block)': '<pre>\n%s\n</pre>',
+          'Math': '$$%s$$'
         }
       });
     });
