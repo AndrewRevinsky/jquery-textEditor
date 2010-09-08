@@ -1,5 +1,6 @@
 /*
  * textEditor, jQuery plugin
+ * Copyright (c) 2010 Colin Drake
  * Licensed under the MIT license.
 */
 (function ($)
