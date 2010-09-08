@@ -1,12 +1,12 @@
 /*
- * formattedTextarea, jQuery plugin
+ * textEditor, jQuery plugin
  * Licensed under the MIT license.
 */
 (function ($)
 {
   $.fn.extend(
   {
-    formattedTextarea: function (options)
+    textEditor: function (options)
     {
       // Get default options, and merge with provided
       var defaults =

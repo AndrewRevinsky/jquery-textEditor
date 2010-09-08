@@ -1,4 +1,4 @@
-formattedTextarea
+jquery.textEditor
 =================
 
 Intro
@@ -11,7 +11,14 @@ Usage
 
 See files in the `demos/` folder, or...
 
-    $('#my-textarea').formattedTextarea({
+    <!-- Include jquery, atools, and texteditor scripts in the <head> -->
+    <script type="text/javascript" src="path/to/js/jquery.a-tools-1.5.2.min.js"></script>
+    <script type="text/javascript" src="path/to/js/jquery.plaintxtformat.js"></script>
+
+    <!-- ... -->
+
+    <!-- In document.ready -->
+    $('#my-textarea').textEditor({
       controls: {
         bold: '[b]%s[/b]',
         italic: '[i]%s[/i]',
