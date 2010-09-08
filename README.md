@@ -1,17 +1,14 @@
 jquery.textEditor
 =================
 
-->![Screen cap](http://github.com/cfdrake/jquery-textEditor/raw/master/screenie.png "Screenshot")<-
+Lightweight jQuery plugin that adds buttons to format plain text in a text input.
 
-Intro
------
-
-jQuery plugin to create an editing interface for textfields using plaintext formatting.
+->![Screen cap](http://github.com/cfdrake/jquery-textEditor/raw/master/demo/images/screenie.png "Screenshot")<-
 
 Usage
 -----
 
-See files in the `demos/` folder, or...
+See `demo/` folder, or...
 
     <!-- Include jquery, atools, and texteditor scripts in the <head> -->
     <script type="text/javascript" src="path/to/js/jquery.a-tools-1.5.2.min.js"></script>
