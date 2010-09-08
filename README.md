@@ -1,7 +1,7 @@
 jquery.textEditor
 =================
 
-![Screen cap](http://github.com/cfdrake/jquery-textEditor/raw/master/screenie.png "Screenshot")
+->![Screen cap](http://github.com/cfdrake/jquery-textEditor/raw/master/screenie.png "Screenshot")<-
 
 Intro
 -----
