@@ -3,7 +3,7 @@ jquery.textEditor
 
 Lightweight jQuery plugin that adds buttons to format plain text in a text input.
 
-->![Screen cap](http://github.com/cfdrake/jquery-textEditor/raw/master/demo/images/screenie.png "Screenshot")<-
+![Screen cap](http://colinfdrake.com/images/screenie.png)
 
 Usage
 -----
